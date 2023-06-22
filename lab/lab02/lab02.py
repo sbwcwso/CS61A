@@ -2,6 +2,10 @@
 
 # Lambda Functions
 
+from cProfile import label
+from turtle import right
+
+
 def lambda_curry2(func):
     """
     Returns a Curried version of a two-argument function FUNC.
@@ -18,7 +22,7 @@ def lambda_curry2(func):
     3
     """
     "*** YOUR CODE HERE ***"
-    return ______
+    return lambda x: lambda y: func(x, y)
 
 def count_cond(condition):
     """Returns a function with one parameter N that counts all the numbers from
@@ -47,7 +51,14 @@ def count_cond(condition):
     >>> count_primes(20)   # 2, 3, 5, 7, 11, 13, 17, 19
     8
     """
-    "*** YOUR CODE HERE ***"
+    def count(n):
+        i, counts = 1, 0
+        while i <= n:
+            if condition(n, i):
+                counts += 1
+            i += 1
+        return counts
+    return count
 
 def both_paths(sofar="S"):
     """
@@ -60,7 +71,12 @@ def both_paths(sofar="S"):
     >>> _ = leftleft()
     SLL
     """
-    "*** YOUR CODE HERE ***"
+    print(sofar)
+    def left():
+        return both_paths(sofar=sofar+"L")
+    def right(sofar=sofar):
+        return both_paths(sofar=sofar+"R")
+    return left, right
 
 # Higher Order Functions
 
@@ -95,7 +111,7 @@ def composite_identity(f, g):
     >>> b1(4)                            # (4 + 1)^2 != 4^2 + 1
     False
     """
-    "*** YOUR CODE HERE ***"
+    return lambda x: compose1(f, g)(x) == compose1(g, f)(x)
 
 def cycle(f1, f2, f3):
     """Returns a function that is itself a higher-order function.
@@ -123,4 +139,18 @@ def cycle(f1, f2, f3):
     >>> do_two_cycles(1)
     19
     """
-    "*** YOUR CODE HERE ***"
+    def gen_cycle(n):
+        # def three_cycle(func):
+        #     return lambda x: f3(f2(f1(func(x))))
+
+        func = lambda x: x
+        for _ in range(n // 3):
+          func = lambda x: f3(f2(f1(func(x))))
+        
+        return [
+            func,
+            lambda x: f1(func(x)),
+            lambda x: f2(f1(func(x))),
+        ][n % 3]
+
+    return gen_cycle
