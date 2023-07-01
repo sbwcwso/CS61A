@@ -38,7 +38,36 @@ class VendingMachine:
     >>> w.vend()
     'Here is your soda.'
     """
-    "*** YOUR CODE HERE ***"
+    def __init__(self, product_name: str, price: int) -> None:
+        self.product_name = product_name
+        self.price = price
+        self.stock = 0
+        self.funds = 0
+        
+    def vend(self) -> str:
+        if self.stock == 0:
+            return "Machine is out of stock."
+        elif self.funds < self.price:
+            return "You must add ${} more funds.".format(self.price - self.funds)
+        else:
+            change = self.funds - self.price
+            self.funds = 0
+            self.stock -= 1
+            if (change > 0):
+                return "Here is your {} and ${} change.".format(self.product_name, change)
+            else:
+                return "Here is your {}.".format(self.product_name)
+        
+    def add_funds(self, funds: int) -> str:
+        if self.stock == 0:
+            return "Machine is out of stock. Here is your ${}.".format(funds)
+        else:
+            self.funds += funds
+            return "Current balance: ${}".format(self.funds)
+
+    def restock(self, stock_nums: int) -> str:
+        self.stock += stock_nums
+        return "Current {} stock: {}".format(self.product_name, self.stock)
 
 def preorder(t):
     """Return a list of the entries in this tree in the order that they
@@ -50,7 +79,11 @@ def preorder(t):
     >>> preorder(Tree(2, [Tree(4, [Tree(6)])]))
     [2, 4, 6]
     """
-    "*** YOUR CODE HERE ***"
+    result = [t.label]
+    for branch in t.branches:
+        result += preorder(branch)
+    return result
+
 
 def store_digits(n):
     """Stores the digits of a positive number n in a linked list.
@@ -63,7 +96,13 @@ def store_digits(n):
     >>> store_digits(876)
     Link(8, Link(7, Link(6)))
     """
-    "*** YOUR CODE HERE ***"
+    all_but_last, last = n // 10, n % 10
+    result = Link(last)
+    while all_but_last > 0:
+        all_but_last, last = all_but_last // 10, all_but_last % 10
+        result = Link(last, result)
+    return result   
+
 
 def generate_paths(t, value):
     """Yields all possible paths from the root of t to a node with the label value
@@ -99,13 +138,13 @@ def generate_paths(t, value):
     >>> sorted(list(path_to_2))
     [[0, 2], [0, 2, 1, 2]]
     """
+    if t.label == value:
+        yield [t.label]
+    
+    for branch in t.branches:
+        for path in generate_paths(branch, value):
+            yield [t.label] + path
 
-    "*** YOUR CODE HERE ***"
-
-    for _______________ in _________________:
-        for _______________ in _________________:
-
-            "*** YOUR CODE HERE ***"
 
 ## Optional Questions
 def is_bst(t):
@@ -133,7 +172,34 @@ def is_bst(t):
     >>> is_bst(t7)
     False
     """
-    "*** YOUR CODE HERE ***"
+    def bst_max(t):
+        if t.is_leaf(): return t.label
+        if len(t.branches) == 1:
+            return max(t.label, bst_max(t.branches[0]))
+        else:
+            return bst_max(t.branches[1])
+        
+    def bst_min(t):
+        if t.is_leaf(): return t.label
+        return min(t.label, bst_min(t.branches[0]))
+    
+    if t.is_leaf(): return True
+    if len(t.branches) > 2: return False
+
+    if not is_bst(t.branches[0]): return False
+
+    if len(t.branches) == 1:
+        if t.label < bst_max(t.branches[0]) and t.label > bst_min(t.branches[0]):
+            return False
+
+    if len(t.branches) == 2:
+        if not is_bst(t.branches[1]): return False
+        if t.label > bst_min(t.branches[1]): return False
+        if t.label < bst_max(t.branches[0]): return False
+    
+    return True
+
+    
 class Mint:
     """A mint creates coins by stamping on years.
 
