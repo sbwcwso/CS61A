@@ -236,23 +236,26 @@ class Mint:
         self.update()
 
     def create(self, kind):
-        "*** YOUR CODE HERE ***"
+        return (kind(self.year))
 
     def update(self):
-        "*** YOUR CODE HERE ***"
-
+        self.year = Mint.current_year
+        
 class Coin:
     def __init__(self, year):
         self.year = year
 
     def worth(self):
-        "*** YOUR CODE HERE ***"
+        age = Mint.current_year - self.year
+        return self.cents if age < 50 else self.cents + age - 50
 
 class Nickel(Coin):
     cents = 5
 
 class Dime(Coin):
     cents = 10
+
+
 def remove_all(link , value):
     """Remove all the nodes containing value in link. Assume that the
     first element is never removed.
@@ -270,7 +273,13 @@ def remove_all(link , value):
     >>> print(l1)
     <0 1>
     """
-    "*** YOUR CODE HERE ***"
+    while link.rest != Link.empty:
+        if link.rest.first == value:
+            link.rest = link.rest.rest
+        else:
+            link = link.rest
+    
+
 def deep_map(f, link):
     """Return a Link with the same structure as link but with fn mapped over
     its elements. If an element is an instance of a linked list, recursively
@@ -284,7 +293,12 @@ def deep_map(f, link):
     >>> print(deep_map(lambda x: 2 * x, Link(s, Link(Link(Link(5))))))
     <<2 <4 6> 8> <<10>>>
     """
-    "*** YOUR CODE HERE ***"
+    if link == Link.empty:
+        return link
+    if type(link.first) == Link:
+        return Link(deep_map(f, link.first), deep_map(f, link.rest))
+    else:
+        return Link(f(link.first), deep_map(f, link.rest))
 
 ## Link Class ##
 
