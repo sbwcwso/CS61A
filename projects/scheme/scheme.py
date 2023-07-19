@@ -161,7 +161,8 @@ class BuiltinProcedure(Procedure):
         python_args = []
         # BEGIN PROBLEM 3
         while args != nil :
-            python_args.append()
+            python_args.append(args.first)
+            args = args.rest
         # END PROBLEM 3
         try:
             return self.fn(*python_args)
