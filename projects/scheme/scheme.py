@@ -164,7 +164,7 @@ class BuiltinProcedure(Procedure):
             python_args.append(args.first)
             args = args.rest
         if self.use_env is True:
-            python_args.append()
+            python_args.append(env)
         # END PROBLEM 3
         try:
             return self.fn(*python_args)
