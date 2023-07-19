@@ -101,7 +101,7 @@ class Frame(object):
         value = self.bindings.get(symbol, None)
         if value is None:
             if self.parent is not None:
-                value = self.parent
+                value = self.parent.lookup()
         # END PROBLEM 2
         raise SchemeError('unknown identifier: {0}'.format(symbol))
 
