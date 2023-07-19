@@ -98,7 +98,7 @@ class Frame(object):
     def lookup(self, symbol):
         """Return the value bound to SYMBOL. Errors if SYMBOL is not found."""
         # BEGIN PROBLEM 2
-        "*** YOUR CODE HERE ***"
+        
         # END PROBLEM 2
         raise SchemeError('unknown identifier: {0}'.format(symbol))
 
