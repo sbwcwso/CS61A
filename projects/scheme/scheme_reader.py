@@ -164,6 +164,8 @@ def read_tail(src: Buffer):
             # END PROBLEM 1
         else:
             # BEGIN PROBLEM 1
+            if src.current() == "(":
+                raise SyntaxError('bracket mismatch')
             first = scheme_read(src)
             rest = read_tail(src)
             if src.current() != ")":
