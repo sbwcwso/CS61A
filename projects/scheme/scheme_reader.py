@@ -160,11 +160,13 @@ def read_tail(src: Buffer):
             raise SyntaxError('unexpected end of file')
         elif src.current() == ')':
             # BEGIN PROBLEM 1
+            src.pop_first()
             return nil
             # END PROBLEM 1
         else:
             # BEGIN PROBLEM 1
             if src.current() == ")":
+                raise SyntaxError('bracket mismatch')
             first = scheme_read(src)
             rest = read_tail(src)
             # if src.current() != ")":
