@@ -101,7 +101,7 @@ class Frame(object):
         value = self.bindings.get(symbol, None)
         if value is None:
             if self.parent is not None:
-                value = self.parent.lookup()
+                value = self.parent.lookup(symbol)
         if value is not None:
             return value
         # END PROBLEM 2
