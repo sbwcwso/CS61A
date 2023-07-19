@@ -13,7 +13,7 @@ from ucb import main, trace
 ##############
 
 
-def scheme_eval(expr: Pair, env: Frame, _=None): # Optional third argument is ignored
+def scheme_eval(expr, env, _=None): # Optional third argument is ignored
     """Evaluate Scheme expression EXPR in environment ENV.
 
     >>> expr = read_line('(+ 2 2)')
@@ -36,7 +36,7 @@ def scheme_eval(expr: Pair, env: Frame, _=None): # Optional third argument is ig
         return SPECIAL_FORMS[first](rest, env)
     else:
         # BEGIN PROBLEM 4
-        
+        p
 
         args = []
         # END PROBLEM 4
