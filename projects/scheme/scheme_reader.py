@@ -167,7 +167,7 @@ def read_tail(src: Buffer):
             first = scheme_read(src)
             rest = read_tail(src)
             if src.pop_first() != ")":
-                raise SyntaxError('unexpected end of file')
+                raise SyntaxError('')
             return Pair(first, rest)
             # END PROBLEM 1
     except EOFError:
