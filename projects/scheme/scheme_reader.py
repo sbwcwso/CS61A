@@ -165,7 +165,7 @@ def read_tail(src):
         else:
             # BEGIN PROBLEM 1
             first = scheme_read(src)
-            rest = read_tail()
+            rest = read_tail(src)
             # END PROBLEM 1
     except EOFError:
         raise SyntaxError('unexpected end of file')
