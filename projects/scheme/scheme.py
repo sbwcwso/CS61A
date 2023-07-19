@@ -100,7 +100,8 @@ class Frame(object):
         # BEGIN PROBLEM 2
         value = self.bindings.get(symbol, None)
         if value is None:
-            if self.parent is 
+            if self.parent is not None:
+                
         # END PROBLEM 2
         raise SchemeError('unknown identifier: {0}'.format(symbol))
 
