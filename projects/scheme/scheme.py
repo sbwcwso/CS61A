@@ -100,6 +100,7 @@ class Frame(object):
         # BEGIN PROBLEM 2
         value = self.bindings.get(symbol, None)
         if value is None:
+            if 
         # END PROBLEM 2
         raise SchemeError('unknown identifier: {0}'.format(symbol))
 
