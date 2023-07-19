@@ -37,7 +37,7 @@ def scheme_eval(expr, env, _=None): # Optional third argument is ignored
     else:
         # BEGIN PROBLEM 4
         procedure = first.apply()
-        
+        validate_type()
         # END PROBLEM 4
 
 def self_evaluating(expr):
