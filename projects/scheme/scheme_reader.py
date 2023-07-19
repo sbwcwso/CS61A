@@ -135,7 +135,7 @@ def scheme_read(src):
         # END PROBLEM 1
     elif val == '(':
         # BEGIN PROBLEM 1
-        rea
+        return 
         # END PROBLEM 1
     elif val == "'":
         # BEGIN PROBLEM 6
