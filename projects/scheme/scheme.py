@@ -36,7 +36,7 @@ def scheme_eval(expr, env, _=None): # Optional third argument is ignored
         return SPECIAL_FORMS[first](rest, env)
     else:
         # BEGIN PROBLEM 4
-        validate_procedure(procedure)
+        
 
         args = []
         # END PROBLEM 4
