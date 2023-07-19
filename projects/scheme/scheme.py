@@ -78,7 +78,7 @@ def eval_all(expressions, env):
 class Frame(object):
     """An environment frame binds Scheme symbols to Scheme values."""
 
-    def __init__(self, parent: Frame):
+    def __init__(self, parent):
         """An empty frame with parent frame PARENT (which may be None)."""
         self.bindings = {}
         self.parent = parent
