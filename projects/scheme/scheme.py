@@ -160,7 +160,7 @@ class BuiltinProcedure(Procedure):
         # Convert a Scheme list to a Python list
         python_args = []
         # BEGIN PROBLEM 3
-        "*** YOUR CODE HERE ***"
+        
         # END PROBLEM 3
         try:
             return self.fn(*python_args)
