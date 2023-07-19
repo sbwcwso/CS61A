@@ -146,7 +146,7 @@ class BuiltinProcedure(Procedure):
     def __str__(self):
         return '#[{0}]'.format(self.name)
 
-    def apply(self, args, env):
+    def apply(self, args: Pair, env):
         """Apply SELF to ARGS in ENV, where ARGS is a Scheme list (a Pair instance).
 
         >>> env = create_global_frame()
