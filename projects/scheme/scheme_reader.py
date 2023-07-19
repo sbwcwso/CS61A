@@ -147,7 +147,7 @@ def scheme_read(src):
         raise SyntaxError('unexpected token: {0}'.format(val))
 
 
-def read_tail(src:):
+def read_tail(src: Buffer):
     """Return the remainder of a list in SRC, starting before an element or ).
 
     >>> read_tail(Buffer(tokenize_lines([')'])))
@@ -166,7 +166,7 @@ def read_tail(src:):
             # BEGIN PROBLEM 1
             first = scheme_read(src)
             rest = read_tail(src)
-            if src.pop
+            if src.pop_first() 
             return Pair(first, rest)
             # END PROBLEM 1
     except EOFError:
