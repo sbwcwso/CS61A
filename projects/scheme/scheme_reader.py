@@ -145,6 +145,8 @@ def scheme_read(src):
         return val
     else:
         raise SyntaxError('unexpected token: {0}'.format(val))
+
+
 def read_tail(src):
     """Return the remainder of a list in SRC, starting before an element or ).
 
