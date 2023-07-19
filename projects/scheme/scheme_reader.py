@@ -165,6 +165,7 @@ def read_tail(src: Buffer):
         else:
             # BEGIN PROBLEM 1
             if src.current() == ")":
+                
             first = scheme_read(src)
             rest = read_tail(src)
             # if src.current() != ")":
