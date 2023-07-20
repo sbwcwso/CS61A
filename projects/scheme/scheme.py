@@ -37,7 +37,7 @@ def scheme_eval(expr, env, _=None): # Optional third argument is ignored
     else:
         # BEGIN PROBLEM 4
         procedure = env.lookup(first)
-        validate_procedure()
+        validate_procedure(proce)
 
         args = []
         # END PROBLEM 4
