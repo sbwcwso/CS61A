@@ -36,9 +36,9 @@ def scheme_eval(expr, env, _=None): # Optional third argument is ignored
         return SPECIAL_FORMS[first](rest, env)
     else:
         # BEGIN PROBLEM 4
-        evaled_expr = expr.map(lambda item: scheme_eval(item, env))
-        procedure, args = evaled_expr.first, evaled_expr.rest
+        procedure = scheme_eval(first, env)
         validate_procedure(procedure)
+        args = rest.map(lambda item: scheme_eval(item, env))
         return scheme_apply(procedure, args, env)
         # END PROBLEM 4
 
