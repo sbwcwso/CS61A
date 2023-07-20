@@ -37,7 +37,7 @@ def scheme_eval(expr, env, _=None): # Optional third argument is ignored
     else:
         # BEGIN PROBLEM 4
         if isinstance(first, Pair):
-            proec = scheme_eval(first, env)
+            procedure = scheme_eval(first, env)
         else:
             procedure = env.lookup(first)
         validate_procedure(procedure)
