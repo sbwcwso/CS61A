@@ -249,8 +249,7 @@ def do_define_form(expressions, env):
     if scheme_symbolp(target): 
         validate_form(expressions, 2, 2) # Checks that expressions is a list of length exactly 2
         # BEGIN PROBLEM 5
-        variable, value = expressions.first, scheme_eval(expressions.rest.first)
-        value = scheme_eval(value, env)
+        variable, value = expressions.first, scheme_eval(expressions.rest.first, env)
         env.define(variable, value)
         return variable
         # END PROBLEM 5
