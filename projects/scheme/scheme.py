@@ -270,7 +270,7 @@ def do_quote_form(expressions, env):
     """
     validate_form(expressions, 1, 1)
     # BEGIN PROBLEM 6
-    "*** YOUR CODE HERE ***"
+    return expressions
     # END PROBLEM 6
 
 def do_begin_form(expressions, env):
