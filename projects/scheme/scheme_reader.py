@@ -140,7 +140,7 @@ def scheme_read(src):
     elif val == "'":
         # BEGIN PROBLEM 6
         quote = scheme_read(src)
-        return Pair('quote')
+        return Pair('quote', )
         # END PROBLEM 6
     elif val not in DELIMITERS:
         return val
