@@ -251,7 +251,7 @@ def do_define_form(expressions, env):
         # BEGIN PROBLEM 5
         variable, value = expressions.first, expressions.rest
         if isinstance(value, Pair):
-            value = 
+            value = scheme_eval()
         env.define(variable, value)
         # END PROBLEM 5
     elif isinstance(target, Pair) and scheme_symbolp(target.first):
