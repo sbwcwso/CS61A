@@ -37,8 +37,7 @@ def scheme_eval(expr, env, _=None): # Optional third argument is ignored
     else:
         # BEGIN PROBLEM 4
         evaled_expr = expr.map(lambda item: scheme_eval(item, env))
-        procedure, args = expr.first, expr.rest
-        procedure = first
+        procedure, args = evaled_expr.first, evaled_expr.rest
         validate_procedure(procedure)
         rest = rest.map(lambda item: scheme_eval(item, env))
         return scheme_apply(procedure, rest, env)
