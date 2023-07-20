@@ -36,10 +36,10 @@ def scheme_eval(expr, env, _=None): # Optional third argument is ignored
         return SPECIAL_FORMS[first](rest, env)
     else:
         # BEGIN PROBLEM 4
-        if isinstance(first, Pair):
-            procedure = scheme_eval(first, env)
-        else:
-            procedure = env.lookup(first)
+        # if isinstance(first, Pair):
+        procedure = scheme_eval(first, env)
+        # else:
+        #     procedure = env.lookup(first)
         validate_procedure(procedure)
         rest = rest.map(lambda item: scheme_eval(item, env))
         return scheme_apply(procedure, rest, env)
