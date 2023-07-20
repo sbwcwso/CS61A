@@ -37,7 +37,7 @@ def scheme_eval(expr, env, _=None): # Optional third argument is ignored
     else:
         # BEGIN PROBLEM 4
         # if isinstance(first, Pair):
-        #     first = scheme_eval(first, env)
+        first = scheme_eval(first, env)
         procedure = env.lookup(first)
         validate_procedure(procedure)
         rest = rest.map(lambda item: scheme_eval(item, env))
