@@ -39,7 +39,7 @@ def scheme_eval(expr, env, _=None): # Optional third argument is ignored
         procedure = env.lookup(first)
         validate_procedure(procedure)
         rest = rest.map(lambda item: scheme_eval(item, env))
-        return scheme_apply(procedure, rest)
+        return scheme_apply(procedure, rest, env)
         # END PROBLEM 4
 
 def self_evaluating(expr):
