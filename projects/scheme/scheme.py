@@ -347,8 +347,8 @@ def do_and_form(expressions, env):
     False
     """
     # BEGIN PROBLEM 12
-    if expressions == nil: return True
     while expressions != nil:
+    return True
     # END PROBLEM 12
 
 def do_or_form(expressions, env):
