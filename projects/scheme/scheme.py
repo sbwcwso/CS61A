@@ -134,7 +134,8 @@ class Frame(object):
             raise SchemeError('Incorrect number of arguments to function call')
         # BEGIN PROBLEM 10
         child_frame = Frame(self)
-        formal, val = 
+        formal, val = formals.first, vals.first
+        while 
             child_frame.define(formal, val)
         return child_frame
         # END PROBLEM 10
