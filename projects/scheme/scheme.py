@@ -72,7 +72,7 @@ def eval_all(expressions, env):
     """
     # BEGIN PROBLEM 7
     res = None
-    expression = expressions.first
+    first, rest = expressions.first, express
     while expression != nil:
         res = scheme_eval(expression, env)
         rest = expressions.rest
