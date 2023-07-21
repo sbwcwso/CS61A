@@ -396,7 +396,8 @@ def do_cond_form(expressions, env):
         if is_true_primitive(test):
             # BEGIN PROBLEM 13
             if clause.rest is nil:
-                return 
+                return test
+            
             # END PROBLEM 13
         expressions = expressions.rest
 
