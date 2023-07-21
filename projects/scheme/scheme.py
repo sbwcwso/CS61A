@@ -370,13 +370,12 @@ def do_or_form(expressions, env):
     6
     """
     # BEGIN PROBLEM 12
-    value = False 
     while expressions != nil:
         value = scheme_eval(expressions.first, env)
         if is_true_primitive(value):
             return value
         expressions = expressions.rest
-    return 
+    return False
     # END PROBLEM 12
 
 def do_cond_form(expressions, env):
