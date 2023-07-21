@@ -134,7 +134,7 @@ class Frame(object):
             raise SchemeError('Incorrect number of arguments to function call')
         # BEGIN PROBLEM 10
         child_frame = Frame(self)
-        for variable, 
+        for variable, value in zip
         # END PROBLEM 10
 
 ##############
