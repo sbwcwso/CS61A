@@ -421,8 +421,9 @@ def make_let_frame(bindings, env):
         raise SchemeError('bad bindings list in let form')
     names, values = nil, nil
     # BEGIN PROBLEM 14
-    while bindings in not nil:
+    while bindings is not nil:
         binding = bindings.first
+        
     # END PROBLEM 14
     return env.make_child_frame(names, values)
     
