@@ -265,7 +265,7 @@ def do_define_form(expressions, env):
         # BEGIN PROBLEM 9
         formals = target.rest
         body = expressions.rest
-        do_la
+        do_lambda_form()
         # END PROBLEM 9
     else:
         bad_target = target.first if isinstance(target, Pair) else target
