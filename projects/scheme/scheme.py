@@ -306,7 +306,7 @@ def do_lambda_form(expressions, env):
     # BEGIN PROBLEM 8
     body = expressions.rest
     validate_form(body, 1)
-    return LambdaProcedure
+    return LambdaProcedure(formals, )
     # END PROBLEM 8
 
 def do_if_form(expressions, env):
