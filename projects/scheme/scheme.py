@@ -135,7 +135,7 @@ class Frame(object):
         # BEGIN PROBLEM 10
         child_frame = Frame(self)
         formal, val = formals.first, vals.first
-        while formal != nil:
+        while formals != nil:
             child_frame.define(formal, val)
             formals, vals = formals.rest, vals.rest
             formal, val = formals.first, vals.first
