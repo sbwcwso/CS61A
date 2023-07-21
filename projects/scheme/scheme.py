@@ -397,7 +397,7 @@ def do_cond_form(expressions, env):
             # BEGIN PROBLEM 13
             if clause.rest is nil:
                 return test
-            return 
+            return eval_all
             # END PROBLEM 13
         expressions = expressions.rest
 
