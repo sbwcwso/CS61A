@@ -348,7 +348,8 @@ def do_and_form(expressions, env):
     """
     # BEGIN PROBLEM 12
     while expressions != nil:
-        value = scheme_eval()
+        value = scheme_eval(expressions.first, env)
+    
     # END PROBLEM 12
 
 def do_or_form(expressions, env):
