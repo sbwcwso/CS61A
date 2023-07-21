@@ -423,7 +423,7 @@ def make_let_frame(bindings, env):
     # BEGIN PROBLEM 14
     while bindings is not nil:
         binding = bindings.first
-        validate_form
+        validate_form()
     # END PROBLEM 14
     return env.make_child_frame(names, values)
     
