@@ -305,6 +305,7 @@ def do_lambda_form(expressions, env):
     validate_formals(formals)
     # BEGIN PROBLEM 8
     body = expressions.rest
+    validate_form(body, 1)
     
     # END PROBLEM 8
 
