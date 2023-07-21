@@ -425,6 +425,7 @@ def make_let_frame(bindings, env):
         binding = bindings.first
         validate_form(binding, 2, 2)
         names = Pair(binding.first, names)
+        values = bindings.rest
         if isinstance(binding.rest, Pair):
             values = Pair(scheme_eval(binding.rest, env), values)
         bindings = bindings.rest
