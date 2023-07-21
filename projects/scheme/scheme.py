@@ -71,7 +71,7 @@ def eval_all(expressions, env):
     2
     """
     # BEGIN PROBLEM 7
-    expression = expressions
+    expression = expressions.first
     return scheme_eval(expressions.first, env) # change this line
     # END PROBLEM 7
 
