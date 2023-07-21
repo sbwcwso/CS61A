@@ -348,7 +348,7 @@ def do_and_form(expressions, env):
     """
     # BEGIN PROBLEM 12
     while expressions != nil:
-    
+        
     # END PROBLEM 12
 
 def do_or_form(expressions, env):
