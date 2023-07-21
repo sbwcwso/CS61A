@@ -373,7 +373,7 @@ def do_or_form(expressions, env):
     value = False 
     while expressions != nil:
         value = scheme_eval(expressions.first, env)
-        if is_t_primitive(value):
+        if is_true_primitive(value):
             return False
         expressions = expressions.rest
     return value
