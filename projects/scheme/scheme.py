@@ -135,7 +135,7 @@ class Frame(object):
         # BEGIN PROBLEM 10
         child_frame = Frame(self)
         for formal, val in zip(formals, vals):
-            ch
+            child_frame.define()
         # END PROBLEM 10
 
 ##############
