@@ -138,7 +138,6 @@ class Frame(object):
             formal, val = formals.first, vals.first
             child_frame.define(formal, val)
             formals, vals = formals.rest, vals.rest
-            formal, val = formals.first, vals.first
         return child_frame
         # END PROBLEM 10
 
