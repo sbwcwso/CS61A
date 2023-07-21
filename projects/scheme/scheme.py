@@ -133,7 +133,7 @@ class Frame(object):
         if len(formals) != len(vals):
             raise SchemeError('Incorrect number of arguments to function call')
         # BEGIN PROBLEM 10
-        child_frame = make_frame
+        child_frame = make_frame()
         # END PROBLEM 10
 
 ##############
