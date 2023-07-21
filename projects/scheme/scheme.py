@@ -349,7 +349,7 @@ def do_and_form(expressions, env):
     # BEGIN PROBLEM 12
     while expressions != nil:
         value = scheme_eval(expressions.first, env)
-        if is_f
+        if is_false_primitive()
 
     
     # END PROBLEM 12
