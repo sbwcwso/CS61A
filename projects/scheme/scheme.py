@@ -347,7 +347,7 @@ def do_and_form(expressions, env):
     False
     """
     # BEGIN PROBLEM 12
-    "*** YOUR CODE HERE ***"
+    
     # END PROBLEM 12
 
 def do_or_form(expressions, env):
