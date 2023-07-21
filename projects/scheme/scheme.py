@@ -374,7 +374,7 @@ def do_or_form(expressions, env):
     while expressions != nil:
         value = scheme_eval(expressions.first, env)
         if is_true_primitive(value):
-            return False
+            return value
         expressions = expressions.rest
     return value
     # END PROBLEM 12
