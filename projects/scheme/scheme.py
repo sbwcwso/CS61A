@@ -347,12 +347,13 @@ def do_and_form(expressions, env):
     False
     """
     # BEGIN PROBLEM 12
+    value = True
     while expressions != nil:
         value = scheme_eval(expressions.first, env)
         if is_false_primitive(value):
             return False
         expressions = expressions.rest
-
+    return value
     
     # END PROBLEM 12
 
