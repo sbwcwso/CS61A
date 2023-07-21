@@ -428,7 +428,7 @@ def make_let_frame(bindings, env):
         value = bindings.rest
         if isinstance(value, Pair):
             value = scheme_eval(value, env)
-        
+        values = Pair(value, values)
         bindings = bindings.rest
     # END PROBLEM 14
     return env.make_child_frame(names, values)
