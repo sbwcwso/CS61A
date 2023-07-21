@@ -137,6 +137,7 @@ class Frame(object):
         formal, val = formals.first, vals.first
         while formal != nil:
             child_frame.define(formal, val)
+            formal, val = formals.first, vals.first
         return child_frame
         # END PROBLEM 10
 
