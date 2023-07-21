@@ -263,7 +263,7 @@ def do_define_form(expressions, env):
         # END PROBLEM 5
     elif isinstance(target, Pair) and scheme_symbolp(target.first):
         # BEGIN PROBLEM 9
-        
+
         # END PROBLEM 9
     else:
         bad_target = target.first if isinstance(target, Pair) else target
