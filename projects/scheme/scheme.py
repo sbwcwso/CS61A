@@ -354,7 +354,6 @@ def do_and_form(expressions, env):
             return False
         expressions = expressions.rest
     return value
-    
     # END PROBLEM 12
 
 def do_or_form(expressions, env):
