@@ -78,7 +78,7 @@ def eval_all(expressions, env):
         if rest != nil:
             first, rest = rest.first, rest.rest
         else:
-            first = 
+            first = rest
     return res
     # END PROBLEM 7
 
