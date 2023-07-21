@@ -267,7 +267,7 @@ def do_define_form(expressions, env):
         body = expressions.rest
         procedure = do_lambda_form(Pair(formals, body), env)
         env.define(target.first, procedure)
-        return procedure
+        return target.first 
         # END PROBLEM 9
     else:
         bad_target = target.first if isinstance(target, Pair) else target
