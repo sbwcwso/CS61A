@@ -427,7 +427,7 @@ def make_let_frame(bindings, env):
         names = Pair(binding.first, names)
         value = binding.rest
         print("DEBUG:", repr(value.rest)) 
-        value = scheme_eval(bindings.rest.first, env)
+        value = scheme_eval(binding.rest.first, env)
         values = Pair(value, values)
         bindings = bindings.rest
     # END PROBLEM 14
