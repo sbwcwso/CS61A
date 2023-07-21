@@ -395,7 +395,7 @@ def do_cond_form(expressions, env):
             test = scheme_eval(clause.first, env)
         if is_true_primitive(test):
             # BEGIN PROBLEM 13
-            
+            if clause
             # END PROBLEM 13
         expressions = expressions.rest
 
