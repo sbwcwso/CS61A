@@ -133,7 +133,6 @@ class Frame(object):
         if len(formals) != len(vals):
             raise SchemeError('Incorrect number of arguments to function call')
         # BEGIN PROBLEM 10
-        "*** YOUR CODE HERE ***"
         # END PROBLEM 10
 
 ##############
