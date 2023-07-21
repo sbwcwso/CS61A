@@ -422,7 +422,7 @@ def make_let_frame(bindings, env):
     names, values = nil, nil
     # BEGIN PROBLEM 14
     while bindings in not nil:
-        binding = bindi
+        binding = bindings.first
     # END PROBLEM 14
     return env.make_child_frame(names, values)
     
