@@ -20,7 +20,8 @@ if __name__ == '__main__':
         try:
             # `input` prints the prompt, waits, and returns the user's input.
             user_input = input('> ')
-            expr = read(user_input)
+            expr = r
+            ead(user_input)
             if expr is not None:
                 if read_only:
                     print(repr(expr))
