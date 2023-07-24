@@ -554,7 +554,7 @@ class MuProcedure(Procedure):
         self.body = body
 
     # BEGIN PROBLEM 18
-    
+
     # END PROBLEM 18
 
     def __str__(self):
