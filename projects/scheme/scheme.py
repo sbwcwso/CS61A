@@ -570,7 +570,9 @@ def do_mu_form(expressions, env):
     formals = expressions.first
     validate_formals(formals)
     # BEGIN PROBLEM 18
-    "*** YOUR CODE HERE ***"
+    body = expressions.rest
+    validate_form(body, 1)
+    return LambdaProcedure(formals, body, env)
     # END PROBLEM 18
 
 SPECIAL_FORMS['mu'] = do_mu_form
