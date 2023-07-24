@@ -572,7 +572,7 @@ def do_mu_form(expressions, env):
     # BEGIN PROBLEM 18
     body = expressions.rest
     validate_form(body, 1)
-    return MuProcedure(formals, body, env)
+    return MuProcedure(formals, body)
     # END PROBLEM 18
 
 SPECIAL_FORMS['mu'] = do_mu_form
