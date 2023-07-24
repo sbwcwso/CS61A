@@ -557,9 +557,7 @@ class MuProcedure(Procedure):
     def make_call_frame(self, args, env):
         """Make a frame that binds my formal parameters to ARGS, a Scheme list
         of values, for a dynamically-scoped call evaluated in environment ENV."""
-        # BEGIN PROBLEM 11
-        return self.env.make_child_frame(self.formals, args)
-        # END PROBLEM 11
+        return env.make_child_frame(self.formals, args)
     # END PROBLEM 18
 
     def __str__(self):
