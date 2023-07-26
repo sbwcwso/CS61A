@@ -76,10 +76,7 @@ def eval_all(expressions, env):
     first, rest = expressions.first, expressions.rest
     while expressions != nil:
         res = scheme_eval(expressions.first, env)
-        if rest != nil:
-            first, rest = rest.first, rest.rest
-        else:
-            first = rest
+        expressions = expressions.rest
     return res
     # END PROBLEM 7
 
