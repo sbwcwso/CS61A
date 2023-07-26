@@ -648,7 +648,7 @@ def optimize_tail_calls(original_scheme_eval):
         result = Thunk(expr, env)
         # BEGIN
         while isinstance(result, Thunk):
-            result = scheme_eval(expr, env)
+            result = scheme_eval(result.expr, result.env)
         # END
     return optimized_eval
 
