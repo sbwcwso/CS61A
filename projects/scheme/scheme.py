@@ -388,7 +388,7 @@ def do_cond_form(expressions, env):
             if expressions.rest != nil:
                 raise SchemeError('else must be last')
         else:
-            test = scheme_eval(clause.first, env)
+            test = scheme_eval(clause.first, env, )
         if is_true_primitive(test):
             # BEGIN PROBLEM 13
             if clause.rest is nil:
