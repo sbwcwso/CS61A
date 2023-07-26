@@ -71,6 +71,7 @@ def eval_all(expressions, env):
     2
     """
     # BEGIN PROBLEM 7
+    res = None
     if expressions == nil: return None
     first, rest = expressions.first, expressions.rest
     while first != nil:
