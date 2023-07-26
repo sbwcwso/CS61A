@@ -325,9 +325,9 @@ def do_if_form(expressions, env):
     """
     validate_form(expressions, 2, 3)
     if is_true_primitive(scheme_eval(expressions.first, env)):
-        return scheme_eval(expressions.rest.first, env, tail=True if expressions.rest is nil else False)
+        return scheme_eval(expressions.rest.first, env)
     elif len(expressions) == 3:
-        return scheme_eval(expressions.rest.rest.first, env, tail=True if expressions.rest is nil else False)
+        return scheme_eval(expressions.rest.rest.first, env)
 
 def do_and_form(expressions, env):
     """Evaluate a (short-circuited) and form.
