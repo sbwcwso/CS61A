@@ -468,8 +468,6 @@ def do_define_macro(expressions, env):
     if  scheme_symbolp(target):
         body = expressions.rest
         validate_form(body, 1)
-        print('DEBUG', body)
-        print('DEBUG', type(body))
         procedure = MacroProcedure(formals, body, env)
         env.define(target, procedure)
         return target 
