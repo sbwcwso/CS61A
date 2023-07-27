@@ -223,13 +223,13 @@ class MacroProcedure(LambdaProcedure):
         """Apply this macro to the operand expressions."""
         if len(self.formals) != len(operands):
             raise SchemeError('Incorrect number of operands to marco apply')
-        macro_env = Frame(env)
-        formals = self.formals
-        args = operands
-        while formals != nil:
-            macro_env.define(formals.first, args.first)
-            formals, args = formals.rest, args.rest
-        self.body.first = scheme_eval(self.body.first, macro_env)
+        # macro_env = Frame(env)
+        # formals = self.formals
+        # args = operands
+        # while formals != nil:
+        #     macro_env.define(formals.first, args.first)
+        #     formals, args = formals.rest, args.rest
+        # self.body.first = scheme_eval(self.body.first, macro_env)
         return complete_apply(self, operands, env)
 
 def add_builtins(frame, funcs_and_names):
