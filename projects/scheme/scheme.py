@@ -220,7 +220,7 @@ class MacroProcedure(LambdaProcedure):
         if len(self.formals) != len(operands):
             raise SchemeError('Incorrect number of operands to marco apply')
         macro_env = Frame(env)
-        formals 
+        formals = self.formals
         return complete_apply(self, operands, env)
 
 def add_builtins(frame, funcs_and_names):
