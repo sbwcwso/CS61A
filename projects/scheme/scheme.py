@@ -12,7 +12,8 @@ from ucb import main, trace
 # Eval/Apply #
 ##############
 
- scheme_eval(expr, env, tail=False): # Optional third argument is ignored
+
+def scheme_eval(expr, env, tail=False): # Optional third argument is ignored
     """Evaluate Scheme expression EXPR in environment ENV.
 
     >>> expr = read_line('(+ 2 2)')
