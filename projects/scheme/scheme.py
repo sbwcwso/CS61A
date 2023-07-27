@@ -450,7 +450,7 @@ def do_define_macro(expressions, env):
     validate_form(expressions, 2) # Checks that expressions is a list of length at least 2
     if isinstance(expressions.first, Pair):
         target = expressions.first.first
-        formals = target.rest
+        formals = expressions.fir.rest
     else:
         target = expressions.first
         formals = nil
