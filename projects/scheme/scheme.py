@@ -53,8 +53,8 @@ def scheme_apply(procedure, args, env):
     environment ENV."""
     if isinstance(procedure, BuiltinProcedure):
         return procedure.apply(args, env)
-    # if isinstance(procedure, MacroProcedure):
-    #     return scheme_eval(procedure.body.first, env)
+    if isinstance(procedure, MacroProcedure):
+        return scheme_eval(procedure.body.first, env)
     else:
         new_env = procedure.make_call_frame(args, env)
         return eval_all(procedure.body, new_env)
