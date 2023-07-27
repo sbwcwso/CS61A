@@ -439,7 +439,7 @@ def do_define_macro(expressions, env):
     1
     """
     # BEGIN Problem 20
-    "*** YOUR CODE HERE ***"
+    
     # END Problem 20
 
 
