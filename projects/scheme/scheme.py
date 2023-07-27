@@ -440,7 +440,7 @@ def do_define_macro(expressions, env):
     """
     # BEGIN Problem 20
     validate_form(expressions, 2) # Checks that expressions is a list of length at least 2
-    if scheme_symbolp(target.first):
+    if scheme_symbolp(expressions.first):
         formals = target.rest if isinstance(target, Pair) else nil
         body = expressions.rest
         procedure = MacroProcedure(formals, body, env)
