@@ -650,10 +650,6 @@ def optimize_tail_calls(original_scheme_eval):
     return optimized_eval
 
 
-
-
-
-
 ################################################################
 # Uncomment the following line to apply tail call optimization #
 ################################################################
