@@ -439,7 +439,26 @@ def do_define_macro(expressions, env):
     1
     """
     # BEGIN Problem 20
-    
+    validate_form(expressions, 2) # Checks that expressions is a list of length at least 2
+    target = expressions.first
+    if scheme_symbolp(target): 
+        validate_form(expressions, 2, 2) # Checks that expressions is a list of length exactly 2
+        # BEGIN PROBLEM 5
+        value =  scheme_eval(expressions.rest.first, env)
+        env.define(target, value)
+        return target
+        # END PROBLEM 5
+    elif isinstance(target, Pair) and scheme_symbolp(target.first):
+        # BEGIN PROBLEM 9
+        formals = target.rest
+        body = expressions.rest
+        procedure = do_lambda_form(Pair(formals, body), env)
+        env.define(target.first, procedure)
+        return target.first 
+        # END PROBLEM 9
+    else:
+        bad_target = target.first if isinstance(target, Pair) else target
+        raise SchemeError('non-symbol: {0}'.format(bad_target))
     # END Problem 20
 
 
