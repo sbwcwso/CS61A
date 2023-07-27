@@ -464,6 +464,7 @@ def do_define_macro(expressions, env):
 
     if  scheme_symbolp(target):
         body = expressions.rest
+        valid
         procedure = MacroProcedure(formals, body, env)
         env.define(target, procedure)
         return target 
