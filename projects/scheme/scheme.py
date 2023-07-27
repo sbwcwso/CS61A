@@ -226,7 +226,7 @@ class MacroProcedure(LambdaProcedure):
         print('DEBUG', operands)
         print('DEBUG', formals)
         while formals != nil:
-            macro_env.define(formals.first, Pair(Pair(operands.first, nil)))
+            macro_env.define(formals.first, Pair(operands.first, nil))
             formals, operands = formals.rest, operands.rest
         print('DEBUG', macro_env)
         print('DEBUG', str(self.body))
