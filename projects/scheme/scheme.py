@@ -469,7 +469,7 @@ def do_define_macro(expressions, env):
         body = expressions.rest
         validate_form(body, 1)
         procedure = MacroProcedure(formals, body, env)
-        procedure.apply_macro(formals, )
+        procedure.apply_macro(formals, env)
         env.define(target, procedure)
         return target 
     else:
