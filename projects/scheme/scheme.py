@@ -217,6 +217,7 @@ class MacroProcedure(LambdaProcedure):
 
     def apply_macro(self, operands, env):
         """Apply this macro to the operand expressions."""
+        
         return complete_apply(self, operands, env)
 
 def add_builtins(frame, funcs_and_names):
