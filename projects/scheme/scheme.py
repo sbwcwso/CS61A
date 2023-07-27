@@ -231,7 +231,7 @@ class MacroProcedure(LambdaProcedure):
         print('DEBUG', macro_env)
         print('DEBUG', self.body)
         self.body.first = scheme_eval(self.body.first, macro_env)
-        print('DEBUG', self.body)
+        print('DEBUG', str(self.body))
         return complete_apply(self, operands, env)
 
 def add_builtins(frame, funcs_and_names):
