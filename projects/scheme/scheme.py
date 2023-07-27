@@ -450,8 +450,8 @@ def do_define_macro(expressions, env):
     if  scheme_symbolp(target):
         body = expressions.rest
         procedure = MacroProcedure(formals, body, env)
-        env.define(target.first, procedure)
-        return target.first 
+        env.define(target, procedure)
+        return target 
     else:
         bad_target = target.first if isinstance(target, Pair) else target
         raise SchemeError('non-symbol: {0}'.format(bad_target))
