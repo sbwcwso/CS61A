@@ -223,7 +223,7 @@ class MacroProcedure(LambdaProcedure):
         formals = self.formals
         while formals != nil:
             macro_env.define(formals.first, operands.first)
-            formals
+            formals, operands = formals.rest
         return complete_apply(self, operands, env)
 
 def add_builtins(frame, funcs_and_names):
