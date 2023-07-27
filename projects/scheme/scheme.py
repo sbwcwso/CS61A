@@ -230,7 +230,7 @@ class MacroProcedure(LambdaProcedure):
             formals, operands = formals.rest, operands.rest
         print('DEBUG', macro_env)
         print('DEBUG', self.body)
-        self.body = scheme_eval(self.body, macro_env)
+        self.body.first = scheme_eval(self.body.first, macro_env)
         print('DEBUG', self.body)
         return complete_apply(self, operands, env)
 
