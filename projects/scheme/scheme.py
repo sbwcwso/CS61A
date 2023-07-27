@@ -228,7 +228,7 @@ class MacroProcedure(LambdaProcedure):
         args = operands
         while formals != nil:
             macro_env.define(formals.first, args.first)
-            formals, operands = formals.rest, operands.rest
+            formals, args = formals.rest, args.rest
         self.body.first = scheme_eval(self.body.first, macro_env)
         return complete_apply(self, operands, env)
 
