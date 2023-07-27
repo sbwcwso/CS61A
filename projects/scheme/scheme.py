@@ -222,7 +222,7 @@ class MacroProcedure(LambdaProcedure):
         macro_env = Frame(env)
         formals = self.formals
         while formals != nil:
-            child_frame.define(formals.first, operands.first)
+            macro_env.define(formals.first, operands.first)
         return complete_apply(self, operands, env)
 
 def add_builtins(frame, funcs_and_names):
