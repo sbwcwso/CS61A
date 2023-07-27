@@ -445,7 +445,7 @@ def do_define_macro(expressions, env):
         formals = target.rest
     else:
         target = expressions.first
-        formals = 
+        formals = nil
 
     if  isinstance(expressions.first, Pair) and scheme_symbolp(expressions.first):
         body = expressions.rest
