@@ -452,7 +452,7 @@ def do_define_macro(expressions, env):
         # BEGIN PROBLEM 9
         formals = target.rest
         body = expressions.rest
-        procedure = MacroProcedure()
+        procedure = MacroProcedure(forma)
         procedure = do_lambda_form(Pair(formals, body), env)
         env.define(target.first, procedure)
         return target.first 
