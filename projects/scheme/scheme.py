@@ -225,15 +225,10 @@ class MacroProcedure(LambdaProcedure):
             raise SchemeError('Incorrect number of operands to marco apply')
         macro_env = Frame(env)
         formals = self.formals
-        print('DEBUG', operands)
-        print('DEBUG', formals)
         while formals != nil:
             macro_env.define(formals.first, operands.first)
             formals, operands = formals.rest, operands.rest
-        print('DEBUG', macro_env)
-        print('DEBUG', str(self.body))
         self.body.first = scheme_eval(self.body.first, macro_env)
-        print('DEBUG', str(self.body))
         return complete_apply(self, operands, env)
 
 def add_builtins(frame, funcs_and_names):
