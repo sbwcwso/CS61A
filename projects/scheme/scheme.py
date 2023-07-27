@@ -444,7 +444,7 @@ def do_define_macro(expressions, env):
         target = expressions.first.first
         formals = target.rest
     else:
-        
+        target 
     if  isinstance(expressions.first, Pair) and scheme_symbolp(expressions.first):
         body = expressions.rest
         procedure = MacroProcedure(formals, body, env)
