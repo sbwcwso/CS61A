@@ -453,8 +453,7 @@ def do_define_macro(expressions, env):
         env.define(target, procedure)
         return target 
     else:
-        bad_target = target.first if isinstance(target, Pair) else target
-        raise SchemeError('non-symbol: {0}'.format(bad_target))
+        raise SchemeError('non-symbol: {0}'.format(target))
     # END Problem 20
 
 
