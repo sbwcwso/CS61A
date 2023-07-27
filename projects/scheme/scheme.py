@@ -37,6 +37,8 @@ def scheme_eval(expr, env, tail=False): # Optional third argument is ignored
     else:
         # BEGIN PROBLEM 4
         procedure = scheme_eval(first, env)
+        if isinstance(procedure, MacroProcedure):
+            return procedure.apply_macro(args, env)
         validate_procedure(procedure)
         args = rest.map(lambda item: scheme_eval(item, env))
         return scheme_apply(procedure, args, env)
