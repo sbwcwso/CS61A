@@ -229,6 +229,7 @@ class MacroProcedure(LambdaProcedure):
             print('DEBUG', macro_env)
             macro_env.define(formals.first, Pair('quote', Pair(operands.first, nil)))
             formals, operands = formals.rest, operands.rest
+        print('DEBUG', self.body)
         self.body = scheme_eval(self.body, macro_env)
         print('DEBUG', self.body)
         return complete_apply(self, operands, env)
