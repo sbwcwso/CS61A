@@ -458,8 +458,6 @@ def do_define_macro(expressions, env):
     # BEGIN Problem 20
     validate_form(expressions, 2) # Checks that expressions is a list of length at least 2
     if isinstance(expressions.first, Pair):
-        target = expressions.first.first
-        formals = expressions.first.rest
     else:
         target = expressions.first
         formals = nil
