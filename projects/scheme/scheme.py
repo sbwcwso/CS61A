@@ -458,6 +458,7 @@ def do_define_macro(expressions, env):
     # BEGIN Problem 20
     validate_form(expressions, 2) # Checks that expressions is a list of length at least 2
     validate_form(expressions.first, 1)
+
     target = expressions.first.first
     formals = expressions.first.rest
     validate_formals(formals)
