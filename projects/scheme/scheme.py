@@ -225,9 +225,9 @@ class MacroProcedure(LambdaProcedure):
             raise SchemeError('Incorrect number of operands to marco apply')
         macro_env = Frame(env)
         formals = self.formals
-        operands
+        args = operands
         while formals != nil:
-            macro_env.define(formals.first, operands.first)
+            macro_env.define(formals.first, args.first)
             formals, operands = formals.rest, operands.rest
         self.body.first = scheme_eval(self.body.first, macro_env)
         return complete_apply(self, operands, env)
