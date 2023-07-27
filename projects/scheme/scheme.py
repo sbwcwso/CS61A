@@ -222,7 +222,7 @@ class MacroProcedure(LambdaProcedure):
         macro_env = Frame(env)
         formals = self.formals
         while formals != nil:
-            macro_env.define(formals.first, operands.first)
+            macro_env.define(formals.first, Pair(operands.first))
             formals, operands = formals.rest, operands.rest
         self.body = scheme_eval(self.body, macro_env)
         return complete_apply(self, operands, env)
