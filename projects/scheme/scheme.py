@@ -230,7 +230,8 @@ class MacroProcedure(LambdaProcedure):
         #     macro_env.define(formals.first, args.first)
         #     formals, args = formals.rest, args.rest
         # self.body.first = scheme_eval(self.body.first, macro_env)
-        for i in range(len())
+        for i in range(len(operands)):
+            
         return complete_apply(self, operands, env)
 
 def add_builtins(frame, funcs_and_names):
