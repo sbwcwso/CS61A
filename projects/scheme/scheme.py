@@ -441,7 +441,7 @@ def do_define_macro(expressions, env):
     # BEGIN Problem 20
     validate_form(expressions, 2) # Checks that expressions is a list of length at least 2
     if isinstance(expressions.first, Pair):
-        
+        target 
         formals = 
     if  isinstance(expressions.first, Pair) and scheme_symbolp(expressions.first):
         body = expressions.rest
