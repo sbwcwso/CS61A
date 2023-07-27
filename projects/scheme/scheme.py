@@ -230,6 +230,7 @@ class MacroProcedure(LambdaProcedure):
             macro_env.define(formals.first, Pair('quote', Pair(operands.first, nil)))
             formals, operands = formals.rest, operands.rest
         self.body = scheme_eval(self.body, macro_env)
+        print('DEBUG', self.body)
         return complete_apply(self, operands, env)
 
 def add_builtins(frame, funcs_and_names):
