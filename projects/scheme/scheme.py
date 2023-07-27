@@ -443,6 +443,7 @@ def do_define_macro(expressions, env):
     if isinstance(expressions.first, Pair):
         target = expressions.first.first
         formals = target.rest
+    else:
         
     if  isinstance(expressions.first, Pair) and scheme_symbolp(expressions.first):
         body = expressions.rest
