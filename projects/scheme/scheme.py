@@ -445,6 +445,7 @@ def do_define_macro(expressions, env):
         formals = target.rest if isinstance(target, Pair) else nil
         body = expressions.rest
         procedure = MacroProcedure(formals, body, env)
+        procedure = do_lambda_form(Pair(formals, body), env)
         env.define(target.first, procedure)
         return target.first 
     else:
