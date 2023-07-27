@@ -464,7 +464,7 @@ def do_define_macro(expressions, env):
         target = expressions.first
         formals = nil
 
-    validate_form
+    validate_form(expressions.first, 1)
     validate_formals(formals)
     if  scheme_symbolp(target):
         body = expressions.rest
