@@ -217,8 +217,8 @@ class MacroProcedure(LambdaProcedure):
 
     def apply_macro(self, operands, env):
         """Apply this macro to the operand expressions."""
-        if len(self.formals) != len(oprands):
-            raise SchemeError('Incorrect number of arguments to function call')
+        if len(self.formals) != len(operands):
+            raise SchemeError('Incorrect number of operands to marco call')
         return complete_apply(self, operands, env)
 
 def add_builtins(frame, funcs_and_names):
