@@ -447,7 +447,7 @@ def do_define_macro(expressions, env):
         target = expressions.first
         formals = nil
 
-    if  isinstance(expressions.first, Pair) and scheme_symbolp(expressions.first):
+    if  scheme_symbolp(target):
         body = expressions.rest
         procedure = MacroProcedure(formals, body, env)
         env.define(target.first, procedure)
