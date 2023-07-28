@@ -135,6 +135,8 @@ def successor(n):
 
 def one(f):
     """Church numeral 1: same as successor(zero)"""
+    # one = successor(zero)
+    # one(f) = successor(zero)(f)
     return lambda x: f(x)
 
 def two(f):

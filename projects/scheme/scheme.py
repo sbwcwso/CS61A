@@ -39,7 +39,7 @@ def scheme_eval(expr, env, tail=False): # Optional third argument is ignored
         procedure = scheme_eval(first, env)
         validate_procedure(procedure)
         if isinstance(procedure, MacroProcedure):
-            return procedure.apply_macro(rest, env)
+            return scheme_eval(procedure.apply_macro(rest, env), env)
         args = rest.map(lambda item: scheme_eval(item, env))
         return scheme_apply(procedure, args, env)
         # END PROBLEM 4
@@ -53,8 +53,6 @@ def scheme_apply(procedure, args, env):
     environment ENV."""
     if isinstance(procedure, BuiltinProcedure):
         return procedure.apply(args, env)
-    if isinstance(procedure, MacroProcedure):
-        return scheme_eval(procedure._expression, env)
     else:
         new_env = procedure.make_call_frame(args, env)
         return eval_all(procedure.body, new_env)
@@ -221,17 +219,6 @@ class MacroProcedure(LambdaProcedure):
 
     def apply_macro(self, operands, env):
         """Apply this macro to the operand expressions."""
-        if len(self.formals) != len(operands):
-            raise SchemeError('Incorrect number of operands to marco apply')
-        macro_env = Frame(env)
-        formals = self.formals
-        args = operands
-        while formals != nil:
-            macro_env.define(formals.first, args.first)
-            formals, args = formals.rest, args.rest
-        print("DEBUG", self.body)
-        self._expression = scheme_eval(self.body.first, macro_env)
-        print("DEBUG", self._expression)
         return complete_apply(self, operands, env)
 
 def add_builtins(frame, funcs_and_names):
@@ -656,9 +643,9 @@ def complete_apply(procedure, args, env):
     validate_procedure(procedure)
     val = scheme_apply(procedure, args, env)
     if isinstance(val, Thunk):
-        return scheme_eval(val.expr, val.env)
-    else:
-        return val
+        val = scheme_eval(val.expr, val.env)
+    return val
+
 
 def optimize_tail_calls(original_scheme_eval):
     """Return a properly tail recursive version of an eval function."""
