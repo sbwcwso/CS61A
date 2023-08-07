@@ -328,7 +328,7 @@ def do_if_form(expressions, env):
     validate_form(expressions, 2, 3)
     if is_true_primitive(scheme_eval(expressions.first, env)):
         return scheme_eval(expressions.rest.first, env, True)
-    elif len(expressions) == 3:
+    else:
         return scheme_eval(expressions.rest.rest.first, env, True)
 
 def do_and_form(expressions, env):
@@ -643,9 +643,9 @@ def complete_apply(procedure, args, env):
     validate_procedure(procedure)
     val = scheme_apply(procedure, args, env)
     if isinstance(val, Thunk):
-        val = scheme_eval(val.expr, val.env)
-    return val
-
+        return scheme_eval(val.expr, val.env)
+    else:
+        return val
 
 def optimize_tail_calls(original_scheme_eval):
     """Return a properly tail recursive version of an eval function."""
@@ -655,7 +655,6 @@ def optimize_tail_calls(original_scheme_eval):
         """
         if tail and not scheme_symbolp(expr) and not self_evaluating(expr):
             return Thunk(expr, env)
-
         result = Thunk(expr, env)
         # BEGIN
         while isinstance(result, Thunk):
