@@ -1,2 +1,2 @@
-*  [[https://github.com/sbwcwso/CS61A][Personal Study Notes]]
+*  [[https://note.sbwcwso.com/CSStudy/#/page/cs61a][Personal Study Notes]]
 
